@@ -1,0 +1,39 @@
+<table border="1">
+    <thead>
+      <tr>
+        <th>Account ID</th>
+        <th>Account Type</th>
+        <th>Account Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf = "accounts">
+        <td>
+          {{ accounts.accountId }}
+        </td>
+        <td>{{ accounts.accountType }}</td>
+        <td>{{ accounts.balanceAmount }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="1">
+      <thead>
+        <tr>
+          <th>Create Date Time</th>
+          <th>Txn type</th>
+          <th>Net Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let txn of txns">
+          <td>
+            {{ txn.TxnDTM }}
+          </td>
+          <td>{{ txn.TxnType }}</td>
+          <td>{{ txn.Amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button (click)="download()" type="button">Download</button>

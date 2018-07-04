@@ -1,0 +1,61 @@
+<mat-tab-group>
+    <mat-tab label="Account">
+
+      <div class align="center">
+        <h1>Account</h1>
+      </div>
+
+      <h2>{{user | uppercase}} Detail</h2>
+
+      <div *ngIf = 'customer'>
+        <div>
+          <label>Name: {{user}}</label>
+        </div>
+        <div>
+          <label>Address: {{customer.address}} </label>
+        </div>
+        <div>
+          <label>Phone number: {{customer.phoneNum}}</label>
+        </div>
+        <div>
+          <label>Email: {{customer.email}} 
+          </label>
+        </div>
+      </div>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Account ID</th>
+            <th>Account Type</th>
+            <th>Account Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of accounts" routerLink = "/detail/{{account.accountId}}">
+            <td>
+              <a routerLink = "/detail/{{account.accountId}}">
+                {{ account.accountId }}
+              </a>
+            </td>
+            <td>
+              <a routerLink = "/detail/{{account.accountId}}">
+              {{ account.accountType }}
+              </a>
+            </td>
+            <td>
+              <a routerLink = "/detail/{{account.accountId}}">
+              {{ account.balanceAmount }}
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+    <mat-tab label="Transfer"> Content 2 </mat-tab>
+    <mat-tab label="Prompt Pay"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+
+
+

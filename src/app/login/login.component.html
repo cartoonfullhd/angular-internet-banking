@@ -1,0 +1,8 @@
+
+  <h2>
+    Login
+  </h2>
+  Username : <input #userBox type="text" id = "Username"
+  (keyup) = "getUser(userBox.value)"/><br>
+  Password : <input type="password" [(ngModel)] = "pass"/><br>
+  <button (click)="login()" type="button">Ok</button>
