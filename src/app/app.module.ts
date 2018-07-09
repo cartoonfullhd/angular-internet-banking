@@ -12,13 +12,15 @@ import { HomeComponent } from './home/home.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { MatTabsModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    AccountDetailComponent
+    AccountDetailComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

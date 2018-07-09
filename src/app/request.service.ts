@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Customer } from '../app/customer'
+
 
 @Injectable()
 export class RequestService {
@@ -44,5 +46,10 @@ export class RequestService {
   httpRequestGetTxnReport(accountID)
   {
     return this.httpClient.get(this.url + 'txnreport/', {params: {account_id : accountID}, responseType: 'blob'}).toPromise()
+  }
+
+  httpRequestRegister(customer : Customer)
+  {
+    return this.httpClient.post(this.url + 'addaccount/', customer).toPromise()  
   }
 }
